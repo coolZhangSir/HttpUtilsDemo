@@ -1,6 +1,20 @@
 # 简介
-在HttpClient框架上做的请求结果封装.
-1. 对HTTP请求操作的响应结果进行常用类型的封装, 如StatusCode/String/JSONArray/JSONArray/InputStream.
-2. Post/Put请求参数类型支持List<NameValuePair>/JSONObject类型.
-   Get/Delete请求参数通常不会用到复杂类型, 所以暂时只支持List<NameValuePair>类型.
-3. 除了ForInputStream方法, 其余请求方法都支持自动释放请求连接.(v1.0.0新增)
+在HttpClient框架(V4.5.9)上对请求结果进行封装, 支持以下类型:
+* StatusLine
+* String
+* JSONObject
+* JSONArray
+
+# 支持的功能
+1. 支持get和post请求方式的下载.
+
+# 下一步完善的功能
+1. 添加配置类的支持
+   
+   由于没有参数类的封装, 很多配置都不支持指定, 
+   纯粹的方法调用参数类型除了重载没有很好的限定方式.
+   
+   v1.0尝试重载了List<NameValuePair>和JSONObject参数类型, 写起来太麻烦了, 
+   啥功能没有就几百行了, 看上去太麻瓜了.v2.0只支持JSONObject, 
+   提供JSONObject和List<NameValuePair>类型之间互相转换的静态方法.
+   后面再添加配置类应该就好解决了.
